@@ -1,2 +1,14 @@
-Example of code to run GEMMA for mulitple subsets of data to estimate the saturation curve for eQTL
+Example of code to run GEMMA for mulitple subsets of data to estimate the saturation curve for eQTL in outbred Drosophila
+The code subsets the total dataset ~1000 samples into subsets of 200, 400, 600, 800, and ~1000.
+It VOOM transforms the raw gene counts, estimates surrogate variables, and writes the data for GEMMA analyses
+
+- eQTLmapping.R Describes how matrices for each subset were created, transformed, and estimates SVs
+- GEMMA.offset.array.sh Describes the code to run GEMMA on the server for all subsets.
+- autoscriptcountstofam_bodu.R Shows how to make gene counts for each subset into fam files for GEMMA
+- makeGRMforSubsets.sh Shows how to create GRM for each subset for GEMMA
+
+Data needed to use this code:
+- Rawcounts_CPM1_body_eqtCatalog_Aug3021.txt (The raw gene count tables are available in Edmond: https://edmond.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.8JLETW)
+- Rawcounts_CPM1_head_eqtCatalog_Aug3021.txt (The raw gene count tables are available in Edmond: https://edmond.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.8JLETW)
+- Info_Samples_eqtlCatalog_Aug3021.txt (This table is deposited here)
 
